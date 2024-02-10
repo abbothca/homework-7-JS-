@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="uk">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="apple-touch-icon" sizes="180x180" href="../favicon/apple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="../favicon/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="../favicon/favicon-16x16.png" />
+  <link rel="manifest" href="../favicon/site.webmanifest" />
+  <link rel="stylesheet" href="../css/style.css" />
+  <script src="../js/script-2.js"></script>
+  <title>Home work #7</title>
+</head>
+
+<body>
+  <header class="header">
+    <h1>Home work #6</h1>
+    <p class="autor">Хомич Любов</p>
+  </header>
+  <main class="main">
+    <h2>"Просунута робота з масивами"</h2>
+    <article>
+      <h3>2. Задача про перетворення об'єкту</h3>
+      <p>
+        Допустимо у вас є об'єкт, у якому кожен ключ - це назва товару (одним словом), а значення - його ціна.
+      </p>
+      <p>
+        Напишіть функцію яка буде всі ключі переводити у нижній регістр, а всі ціни буде заокруглювати до двох знаків
+        після коми.
+      </p>
+      <p> <strong>
+          Для рішення задачі необхідно використовувати методи масивів та Object.entries/Object.fromEnties методи
+        </strong>
+      </p>
+      <p><em>Приклад</em></p>
+      <pre>
+          <code>
+            // приклад об'єкту
+            const priceData = {
+            Apples: '23.4',
+            BANANAS: '48',
+            oRAngGEs: '48.7584',
+            };
+
+            function optimizer(data) {
+          	// тут ваш код
+            };             
+          </code>
+        </pre>
+    </article>
+    <article>
+      <h2>Звіт</h2>
+      <p>
+        Файл зі скриптами - <a href="../js/script-2.js" target="_blank">Скрипт</a>.
+      </p>
+      <p>
+        Старалася писати коментарі.
+      </p>
+      <p>
+        Щоб організвати рекурсію, мені потрібно фактично пройтися по натуральних числах - зменшувати вхідне значення на
+        1.
+      </p>
+      <p>
+        Додаткову функцію з першого завдання, яка перевіряє вхідне значення на додтнє число, перписала, щоб на виході
+        отримувати лише найбільше ціле число, яке не перевищоє даного.
+      </p>
+      <p>
+        Фінальна функція <code>calcOddSumTo()</code> - нагається звести вхідне значення до найбільшого цілого значення,
+        якщо вдається - викликається рекурсія, інакше повідомлення про помилку.
+      </p>
+      <p></p>
+    </article>
+  </main>
+</body>
+
+</html>
