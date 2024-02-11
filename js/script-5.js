@@ -3,36 +3,28 @@
 
 //Функція сортування
 function sortArray(notSortedArray) {
-    
 
-    if (notSortedArray) {                       //якщо масив не null / undefined
-        let array = notSortedArray.slice();     //робимо йог копію
+    if (notSortedArray) {                            //якщо не null/undefined
 
-        array.forEach( (value, index, array) => {   //проганяємо по всіх елементах
+        let sortingArray = notSortedArray.slice();   //роблю копію, щоб не вносити зміни у вхідний масив
         
-            let indexOfCurrentElement = index;      //запам'ятовуємо індекс несортованого елемента
-            let currentValue = value;               //запам'ятовуємо несортований елемент
-            while (indexOfCurrentElement > 0 && array[indexOfCurrentElement - 1] > value) { //порівнюватимемо з усіма сортованими
-                
-                array[indexOfCurrentElement] = array[indexOfCurrentElement - 1];            //якщо він менший за поточний елемент з відсортованої частини - зміщуватимемо посортовані вправо 
-                indexOfCurrentElement--;                                                    //зменшуємо індекс елемента з яким порівнюватимемо в відсортованій множині
-            }
-            array[indexOfCurrentElement] = currentValue;                                    //коли добралися початку масиву або лівіше вже менші елементи - запишемо значення елемента який порівнювали
+        sortingArray.sort(function (a, b) {          //запускаю сортування
+            return a - b;
         });
 
-        return array;                               //повернемо відсортований масив
+        return sortingArray;                         //повертаємо сортований масив
+
     };
 
-    return [];                                       //повернемо порожній масив, якщо на входу було null/undefined
+    return [];                                       //якщо був null/undefined - повертаємо порожній масив
 };
 
 let numbers = [2, 7, -2, 0, 5, 10, -6, 1];
 let arrayFromExample = [1, 12, 10, 50, 5];
 let arrayOfTestedValue = [null, undefined, [], numbers, arrayFromExample];
 
-arrayOfTestedValue.forEach(element => 
-    {
-        console.log("Start array: ",  element );
-        console.log("Sorted array: ",  sortArray(element) );
-        console.log("________________")
-    });
+arrayOfTestedValue.forEach(element => {
+    console.log("Start array: ", element);
+    console.log("Sorted array: ", sortArray(element));
+    console.log("________________")
+});
