@@ -4,19 +4,17 @@
 //Функція сортування
 function sortArray(notSortedArray) {
 
-    if (notSortedArray) {                            //якщо не null/undefined
-
-        let sortingArray = notSortedArray.slice();   //роблю копію, щоб не вносити зміни у вхідний масив
-        
-        sortingArray.sort(function (a, b) {          //запускаю сортування
-            return a - b;
-        });
-
-        return sortingArray;                         //повертаємо сортований масив
-
+    if (!notSortedArray) {                            //якщо null/undefined
+        return [];                                    //повертаємо порожній масив
     };
 
-    return [];                                       //якщо був null/undefined - повертаємо порожній масив
+    let sortingArray = notSortedArray.slice().sort(function (a, b) {          //роблю копію, щоб не вносити зміни у вхідний масив, запускаю сортування
+        return a - b;
+    });
+
+    return sortingArray;                               //повертаємо сортований масив
+
+    
 };
 
 let numbers = [2, 7, -2, 0, 5, 10, -6, 1];
