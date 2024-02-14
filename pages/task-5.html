@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="uk">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="apple-touch-icon" sizes="180x180" href="../favicon/apple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="../favicon/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="../favicon/favicon-16x16.png" />
+  <link rel="manifest" href="../favicon/site.webmanifest" />
+  <link rel="stylesheet" href="../css/style.css" />
+  <script src="../js/script-5.js"></script>
+  <title>Home work #7</title>
+</head>
+
+<body>
+  <header class="header">
+    <h1>Home work #6</h1>
+    <p class="autor">Хомич Любов</p>
+  </header>
+  <main class="main">
+    <h2>"Просунута робота з масивами"</h2>
+    <articl>
+      <h3>5. Додаткова задача*</h3>
+      <p>
+        Напишіть функцію <code>sortArray</code> яка буде коректно сортувати масив чисел по зростанню. Якщо функція
+        приймає порожній масив, значення <val>null</val> або <var>undefined</var>, вона має повернути порожній масив.
+      </p>
+      <p><em>Приклад</em></p>
+      <pre>
+          <code>
+            function sortArray(arr) {
+              // тут ваш код
+            }
+            
+            console.log(sortArray([1, 12, 10, 50, 5])); // поверне [1,5,10,12,50]
+            console.log(sortArray(null)); // поверне []                   
+          </code>
+        </pre>
+      </article>
+      <article>
+        <h2>Звіт</h2>
+        <p>
+          Файл зі скриптами - <a href="../js/script-5-1.js" target="_blank">Скрипт (метод 1)</a>.
+        </p>
+        <p>
+          Файл зі скриптами - <a href="../js/script-5.js" target="_blank">Скрипт (методом .sort())</a>.
+        </p>
+        <p>
+          Старалася писати коментарі.
+        </p>
+        <p>
+          Я написала два алгоритми. Метод 1 повертає новий сортований масив. Метод 2 - може посортувати вхідний масив, не треба створювати інший. Але для методу 2 - я не можу присвоїти замість null і undefined - [] (єдиний варіант - теж створити копію, і повертати або відсортовану копію або []). 
+        </p>
+        <pre>
+          <code>
+            function sortArray(array) {
+    
+
+              if (array) {
+          
+                  array.forEach( (value, index, array) => {
+                  
+                      let indexOfCurrentElement = index;
+                      let currentValue = value; 
+                      while (indexOfCurrentElement > 0 && array[indexOfCurrentElement - 1] > value) {
+                          
+                          array[indexOfCurrentElement] = array[indexOfCurrentElement - 1];
+                          indexOfCurrentElement--;
+                      }
+                      array[indexOfCurrentElement] = currentValue;
+                  });
+          
+                  return array;
+              } else {
+                array = [];  //         !!!!!не працює!!!!!!
+              }   
+          };
+          </code>
+        </pre>
+      </article>
+  </main>
+</body>
+
+</html>
